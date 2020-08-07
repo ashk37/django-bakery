@@ -193,7 +193,7 @@ Will use settings.BUILD_DIR by default."
             # if gzip isn't enabled, just copy the tree straight over
             else:
                 logger.debug("Copying {}{} to {}{}".format("osfs://", self.static_root, self.fs_name, target_dir))
-                copy.copy_dir("osfs:///", self.static_root, self.fs, target_dir)
+                copy.copy_dir("osfs://", self.static_root, self.fs, target_dir)
 
         # If they exist in the static directory, copy the robots.txt
         # and favicon.ico files down to the root so they will work
