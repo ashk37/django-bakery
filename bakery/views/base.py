@@ -147,7 +147,7 @@ class BuildableTemplateView(TemplateView, BuildableMixin):
         logger.debug("Building %s" % self.template_name)
         build_path = self.get_build_path()
         self.request = self.create_request(build_path)
-        path = os.path.join(settings.BUILD_DIR, build_path)
+        path = os.path.join(settings.BUILD_DIR, build_path).replace("\\","/")
         self.prep_directory(build_path)
         self.build_file(path, self.get_content())
 
